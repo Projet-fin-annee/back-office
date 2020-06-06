@@ -20,31 +20,31 @@
     <h1 class="title">
       À toi d'ajouter les données grâce à ce formulaire :
     </h1>
-    <form class="form">
+    <form class="form" action="index.php?url=newcountry" method="post">
       <div class="form-group">
-        <label for="countrie">Pays</label>
-        <input type="text" class="form-control" id="countrie" />
+        <label for="country">Pays</label>
+        <input type="text" class="form-control" id="country" name="country" />
       </div>
       <div class="form-group">
         <label for="title">Titre</label>
-        <input type="text" class="form-control" id="title" />
+        <input type="text" class="form-control" id="title" name="title" />
       </div>
       <div class="form-group">
         <label for="text">Texte</label>
-        <textarea class="form-control" id="text"></textarea>
+        <textarea class="form-control" id="text" name="text"></textarea>
       </div>
 
       <div class="form-group">
-        <label for="text">Image :</label>
-        <input type="file" accept=".png,.jpeg" aria-describedby="image" />
+        <label for="image">Image :</label>
+        <input type="file" accept=".png,.jpeg" aria-describedby="image" name="image" />
 
         <small id="image" class="form-text text-muted">Formats acceptés : .png .jpeg
         </small>
       </div>
 
       <div class="form-group">
-        <label for="text">Video :</label>
-        <input type="file" accept=".mp4,.mp3" aria-describedby="video" />
+        <label for="video">Video :</label>
+        <input type="file" accept=".mp4,.mp3" aria-describedby="video" name="video" />
         <small id="image" class="form-text text-muted">Formats acceptés : .mp3 .mp4
         </small>
       </div>

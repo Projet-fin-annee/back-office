@@ -2,8 +2,25 @@
 
 class ControllerNewcountry
 {
-  public function __construct()
+
+  private $_newcountrymanager;
+  public function __construct($url)
   {
-    require_once("./views/viewBo-newcountry.php");
+    if (isset($url) && count($url) > 1) {
+      throw new Exception("Page introuvable");
+    } else {
+
+      $this->create_newcountry();
+      require_once("./views/viewBo-newcountry.php");
+    }
+  }
+
+
+  public function create_newcountry()
+  {
+    $country = $_POST['country'];
+    $title = $_POST['title'];
+    $this->_newcountrymanager =  new CountriesManager;
+    $this->_newcountrymanager->create_country($country, $title);
   }
 }

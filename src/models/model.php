@@ -6,7 +6,7 @@ abstract class Model
 
   private static function setBdd()
   {
-    self::$_bdd = new PDO('mysql:host=localhost; dbname=webdoc;charset=utf8', 'root', 'root');
+    self::$_bdd = new PDO('mysql:host=localhost; dbname=webdoc;charset=utf8', 'root2');
     self::$_bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
   }
 
@@ -25,11 +25,12 @@ abstract class Model
   }
 
 
-  protected function postOne($name, $email, $datebirth, $hash_password)
+  protected function postOne($country, $title)
   {
-    $req = $this->getBdd()->prepare("INSERT INTO users (name,email,datebirth, password) VALUES ('$name','$email','$datebirth','$hash_password' )");
 
+    $req = $this->getBdd()->prepare("INSERT INTO countries (country,title) VALUES ('$country','$title' )");
 
     $req->execute();
+    return true;
   }
 }
