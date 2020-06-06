@@ -6,7 +6,7 @@
 .title {
   font-size: 24px;
   text-align: center;
-  margin: 30px 50px 40px 50px;
+  margin: 10px 50px 40px 50px;
 }
 input {
   width: 100%;
@@ -26,7 +26,7 @@ input {
 
   display: flex;
   & img {
-    margin: 40px;
+    margin: 40px 0 0 40px;
     width: 30px;
     cursor: pointer;
   }
