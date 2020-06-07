@@ -25,11 +25,10 @@ abstract class Model
   }
 
 
-  protected function postOne($country, $title)
+  protected function postOne($country, $title, $text, $image, $video)
   {
 
-    $req = $this->getBdd()->prepare("INSERT INTO countries (country,title) VALUES ('$country','$title' )");
-
+    $req = $this->getBdd()->prepare("INSERT INTO countries (country,title,text,image,video) VALUES ('$country','$title','$text','$image','$video' )");
     $req->execute();
     return true;
   }

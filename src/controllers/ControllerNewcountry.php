@@ -20,7 +20,10 @@ class ControllerNewcountry
   {
     $country = $_POST['country'];
     $title = $_POST['title'];
+    $text = $_POST['text'];
+    $image = $_POST['image'];
+    $video = $_POST['video'];
     $this->_newcountrymanager =  new CountriesManager;
-    $this->_newcountrymanager->create_country($country, $title);
+    $this->_newcountrymanager->create_country($country, $title, $text, $image, $video);
   }
 }
