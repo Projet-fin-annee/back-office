@@ -19,14 +19,14 @@
     <h1 class="title">
       À toi d'ajouter les données grâce à ce formulaire :
     </h1>
-    <form class="form">
+    <form class="form" action="index.php?url=newdefinition" method="post">
       <div class="form-group">
         <label for="title">Mot à définir</label>
-        <input type="text" class="form-control" id="title" />
+        <input type="text" class="form-control" id="title" name="word" />
       </div>
       <div class="form-group">
         <label for="text">Texte</label>
-        <textarea class="form-control" id="text"></textarea>
+        <textarea class="form-control" id="text" name="text"></textarea>
       </div>
 
       <button type="submit" class="btn btn-primary">
