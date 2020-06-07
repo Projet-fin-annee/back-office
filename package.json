@@ -6,12 +6,9 @@
   "author": "tania-abitbol <tabitbol@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "parcel src/index.html"
-  },
-  "dependencies": {
-    "parcel": "^1.12.4"
+    "scss": "node-sass --watch src/styles/scss -o src/styles/css"
   },
   "devDependencies": {
-    "sass": "^1.26.7"
+    "node-sass": "^4.13.1"
   }
 }
