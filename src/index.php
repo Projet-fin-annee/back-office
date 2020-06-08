@@ -1,4 +1,5 @@
 <?php
+
 define("URL", str_replace("index.php", "", (isset($_SERVER["HTTPS"]) ? "https" : "http") . "://$_SERVER[HTTP_HOST]"));
 session_start();
 require_once('controllers/Router.php');
