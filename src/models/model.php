@@ -18,12 +18,6 @@ abstract class Model
     return self::$_bdd;
   }
 
-  protected function getOne($table, $email, $password)
-  {
-    $req = $this->getBdd()->prepare("SELECT email, password FROM $table WHERE email='$email'");
-    $req->execute();
-  }
-
 
   protected function postOneCountry($country, $title, $text, $image, $video)
   {
