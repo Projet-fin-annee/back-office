@@ -17,7 +17,7 @@
   </div>
   <div class="container">
     <h1 class="title">
-      Voici tout les pays, sélectionne celui que tu veux modifier dans l'api
+      Voici tout les pays, sélectionne celui que tu veux modifier dans l'API
       ou ajoute-en un nouveau :
     </h1>
     <div class="row">
@@ -29,37 +29,18 @@
           </div>
         </div>
       </div>
-      <?php
-      foreach ($country->country() as $key => $country) :
-      ?>
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><?= $country->countryname(); ?></h5>
-            <p class="card-text">
-              C'est ici que tu peux ajouter les données sur ce pays.
-            </p>
-            <a href="#" class="btn btn-primary">Modifier des données</a>
-          </div>
-        </div>
-      <?php endforeach; ?>
+
+
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Brésil</h5>
           <p class="card-text">
             C'est ici que tu peux ajouté les données sur ce pays.
           </p>
-          <a href="#" class="btn btn-primary">Modifier des données</a>
+          <a href="index.php?url=updateCountry" class="btn btn-primary">Modifier des données</a>
         </div>
       </div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Canada</h5>
-          <p class="card-text">
-            C'est ici que tu peux ajouté les données sur ce pays.
-          </p>
-          <a href="#" class="btn btn-primary">Modifier des données</a>
-        </div>
-      </div>
+
     </div>
   </div>
 </body>

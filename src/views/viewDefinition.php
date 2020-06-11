@@ -38,15 +38,6 @@
           <a href="index.php?url=updateDefinition" class="btn btn-primary">Modifier des données</a>
         </div>
       </div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Racisé</h5>
-          <p class="card-text">
-            C'est ici que tu peux modifier la définition de ce mot.
-          </p>
-          <a href="#" class="btn btn-primary">Modifier des données</a>
-        </div>
-      </div>
     </div>
   </div>
 </body>
