@@ -30,11 +30,11 @@
         </div>
       </div>
       <?php
-      foreach ($country->country() as $key => $country) :
+      foreach ($countries as $key => $country) :
       ?>
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title"><?= $country->countryname(); ?></h5>
+            <h5 class="card-title"><?= $country["title"]; ?></h5>
             <p class="card-text">
               C'est ici que tu peux ajouter les données sur ce pays.
             </p>

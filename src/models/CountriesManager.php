@@ -5,4 +5,11 @@ class CountriesManager extends Model
   {
     $this->postOneCountry($country, $title, $text, $image, $video);
   }
+  
+  public function getCountries()
+  {
+    
+    return $this->getAll("countries");
+  }
+
 }

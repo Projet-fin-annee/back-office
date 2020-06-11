@@ -21,6 +21,8 @@
   display: flex;
   align-items: center;
   width: 70px; }
+  .add-card .img-container > img {
+    width: 100%; }
 
 .title {
   width: 70%;

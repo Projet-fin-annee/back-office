@@ -6,7 +6,7 @@ abstract class Model
 
   private static function setBdd()
   {
-    self::$_bdd = new PDO('mysql:host=localhost; dbname=webdoc;charset=utf8', 'root2');
+    self::$_bdd = new PDO('mysql:host=localhost; dbname=webdoc;charset=utf8', 'root', 'root');
     self::$_bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
   }
 
@@ -43,6 +43,7 @@ abstract class Model
     $req->execute();
     return true;
   }
+
   protected function getOne($table, $email, $password)
   {
     $req = $this->getBdd()->prepare("SELECT email, password FROM $table WHERE email=:email");
@@ -62,5 +63,15 @@ abstract class Model
     } else {
       return false;
     }
+  }
+  
+  protected function getAll($table)
+  {
+    $req = $this->getBdd()->prepare("SELECT * FROM $table");
+    $req->execute();
+    $var = $req->fetch();
+    
+    return $var;
+    
   }
 }
