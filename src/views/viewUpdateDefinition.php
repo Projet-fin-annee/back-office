@@ -15,18 +15,21 @@
       <img src=" assets/img/back.svg" alt="" />
     </a>
   </div>
-  <h1 class="title">Modifie les données de l'API grâce aux champs ci-dessous : </h1>
+  <h1 class="title title__definition">Modifie les données de l'API grâce aux champs ci-dessous : </h1>
   <div class="container">
-    <div class="form-group">
-      <label for="exampleInputEmail1">Mot</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="1">exemple</textarea>
-      <small id="emailHelp" class="form-text text-muted">Modifie directement ton mot depuis l'espace ci-dessus</small>
+    <div class="container__definition">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Mot</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1">exemple</textarea>
+        <small id="emailHelp" class="form-text text-muted">Modifie directement ton mot depuis l'espace ci-dessus</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Définition :</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">exemple</textarea>
+        <small class="form-text text-muted">Modifie directement ta définition depuis l'espace ci-dessus</small>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="exampleFormControlTextarea1">Définition :</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">exemple</textarea>
-      <small class="form-text text-muted">Modifie directement ta définition depuis l'espace ci-dessus</small>
-    </div>
+
     <a href="#" class="btn btn-primary">Valider la modification du texte
     </a>
   </div>

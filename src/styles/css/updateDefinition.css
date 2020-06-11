@@ -16,8 +16,12 @@
   text-align: center;
   font-size: 24px;
   width: 100%; }
+  .title__definition {
+    margin-top: 7%; }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center; }
+  .container__definition {
+    width: 60%; }
