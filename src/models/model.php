@@ -46,6 +46,7 @@ abstract class Model
     if ($user) {
       $_SESSION["email"] = $email;
       $_SESSION["password"] = $password;
+      $_SESSION["login"] = "OK";
       return true;
     } else {
       return false;
