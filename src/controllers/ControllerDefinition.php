@@ -4,6 +4,6 @@ class ControllerDefinition
 {
   public function __construct()
   {
-    require_once("./views/viewBo-definition.php");
+    require_once("./views/viewDefinition.php");
   }
 }

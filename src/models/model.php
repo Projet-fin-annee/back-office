@@ -18,7 +18,6 @@ abstract class Model
     return self::$_bdd;
   }
 
-
   protected function postOneCountry($country, $title, $text, $image, $video)
   {
 

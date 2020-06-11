@@ -11,7 +11,7 @@ class ControllerNewdefinition
     } else {
 
       $this->create_newdefinition();
-      require_once("./views/viewBo-newdefinition.php");
+      require_once("./views/viewNewdefinition.php");
     }
   }
 

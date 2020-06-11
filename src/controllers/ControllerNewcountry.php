@@ -11,7 +11,7 @@ class ControllerNewcountry
     } else {
 
       $this->create_newcountry();
-      require_once("./views/viewBo-newcountry.php");
+      require_once("./views/viewNewcountry.php");
     }
   }
 
