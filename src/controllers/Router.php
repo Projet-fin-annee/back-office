@@ -25,9 +25,9 @@ class Router
           throw new Exception("Page introuvable");
         }
       } else {
-        require_once("controllers/ControllerHome.php");
+        require_once("controllers/ControllerSignin.php");
 
-        new ControllerHome($url);
+        new ControllerSignin($url);
       }
     } catch (Exception $e) {
       $e->getMessage();
