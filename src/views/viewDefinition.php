@@ -35,7 +35,7 @@
           <p class="card-text">
             C'est ici que tu peux modifier la définition de ce mot.
           </p>
-          <a href="" class="btn btn-primary">Modifier des données</a>
+          <a href="index.php?url=updateDefinition" class="btn btn-primary">Modifier des données</a>
         </div>
       </div>
       <div class="card">
