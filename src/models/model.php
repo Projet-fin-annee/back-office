@@ -33,4 +33,23 @@ abstract class Model
     $req->execute();
     return true;
   }
+  protected function getOne($table, $email, $password)
+  {
+    $req = $this->getBdd()->prepare("SELECT email, password FROM $table WHERE email='$email'");
+    $req->execute();
+    $user = $req->FETCH();
+
+    if (!$user) {
+      return false;
+    }
+
+    if ($user) {
+      $_SESSION["email"] = $email;
+      $_SESSION["password"] = $password;
+      $_SESSION["login"] = "OK";
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

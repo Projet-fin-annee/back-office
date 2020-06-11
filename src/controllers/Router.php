@@ -11,9 +11,9 @@ class Router
       });
 
       $url = '';
-      if (isset($_GET['url'])) {
-        $url = explode('/', filter_var($_GET['url'], FILTER_SANITIZE_URL));
 
+      if (isset($_GET['url']) &&  $_SESSION["login"] == "OK") {
+        $url = explode('/', filter_var($_GET['url'], FILTER_SANITIZE_URL));
         $controller = ucfirst(strtolower($url[0]));
         $controllerClass = "Controller" . $controller;
         $controllerFile = "controllers/" . $controllerClass . ".php";
@@ -25,9 +25,9 @@ class Router
           throw new Exception("Page introuvable");
         }
       } else {
-        require_once("controllers/ControllerHome.php");
+        require_once("controllers/ControllerLogin.php");
 
-        new ControllerHome($url);
+        new ControllerLogin($url);
       }
     } catch (Exception $e) {
       $e->getMessage();
