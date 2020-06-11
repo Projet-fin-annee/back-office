@@ -16,6 +16,17 @@
   }
 }
 
+.card-head {
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-self: flex-end;
+  cursor: pointer;
+  & > img {
+    width: 100%;
+  }
+}
+
 .add-card {
   &:hover {
     background-color: rgba(0, 123, 255, 0.3);
