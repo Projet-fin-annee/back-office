@@ -11,8 +11,8 @@
 
 <body>
   <div class="header">
-    <a href="index.php">
-      <img src="assets/img/back.svg" alt="" />
+    <a href="index.php?url=home">
+      <img src=" assets/img/back.svg" alt="" />
     </a>
   </div>
   <div class="container">
