@@ -39,7 +39,6 @@ abstract class Model
     $data_type = PDO::PARAM_STR;
     $req->bindValue(":word", $word,  $data_type);
     $req->bindValue(":text", $text,  $data_type);
-
     $req->execute();
     return true;
   }
