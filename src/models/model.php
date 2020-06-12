@@ -31,6 +31,14 @@ abstract class Model
     $req->execute();
     return true;
   }
+  
+  protected function deleteOneCountry($table, $countryId)
+  {
+    $req = $this->getBdd()->prepare("DELETE FROM $table WHERE  id = $countryId");
+    
+    $req->execute();
+    return true;
+  }
 
 
   protected function postOneDefinition($word, $text)
@@ -69,7 +77,7 @@ abstract class Model
   {
     $req = $this->getBdd()->prepare("SELECT * FROM $table");
     $req->execute();
-    $var = $req->fetch();
+    $var = $req->fetchAll(PDO::FETCH_ASSOC);
     
     return $var;
     

@@ -8,8 +8,14 @@ class CountriesManager extends Model
   
   public function getCountries()
   {
-    
     return $this->getAll("countries");
+  }
+  
+  public function deleteCountry($countryId)
+  {
+   
+
+    return $this->deleteOneCountry("countries",$countryId);
   }
 
 }
