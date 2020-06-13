@@ -22,11 +22,19 @@ class ControllerNewcountry
   public function create_newcountry()
   {
     $country = $_POST['country'];
+    $citationOne = $_POST['citationOne'];
     $title = $_POST['title'];
-    $text = $_POST['text'];
-    $image = $_POST['image'];
+    $citationTwo = $_POST['citationTwo'];
+    $imageOne = $_POST['imageOne'];
+    $textIntro = $_POST['textIntro'];
     $video = $_POST['video'];
+    $citationSpeech = $_POST['citationSpeech'];
+    $person = $_POST['person'];
+    $imageTwo = $_POST['imageTwo'];
+    $textOne = $_POST['textOne'];
+    $imageThree = $_POST['imageThree'];
+    $textTwo = $_POST['textTwo'];
     $this->_newcountrymanager =  new CountriesManager;
-    $this->_newcountrymanager->create_country($country, $title, $text, $image, $video);
+    $this->_newcountrymanager->create_country($country, $citationOne,  $title, $citationTwo, $imageOne, $textIntro, $video, $citationSpeech, $person, $imageTwo, $textOne, $imageThree, $textTwo);
   }
 }
