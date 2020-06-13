@@ -22,13 +22,21 @@ class ControllerUpdatecountry
   public function update_countries()
   {
     $id_country = (int) $_GET['id'];
-
     $country = $_POST['country'];
+    $citationOne = $_POST['citationOne'];
     $title = $_POST['title'];
-    $text = $_POST['text'];
-    $image = $_POST['image'];
+    $citationTwo = $_POST['citationTwo'];
+    $imageOne = $_POST['imageOne'];
+    $textIntro = $_POST['textIntro'];
     $video = $_POST['video'];
+    $citationSpeech = $_POST['citationSpeech'];
+    $person = $_POST['person'];
+    $imageTwo = $_POST['imageTwo'];
+    $textOne = $_POST['textOne'];
+    $imageThree = $_POST['imageThree'];
+    $textTwo = $_POST['textTwo'];
+
     $this->_updatecountrymanager =  new UpdatecountryManager;
-    $this->_updatecountrymanager->update_country($country, $title, $text, $image, $video, $id_country);
+    $this->_updatecountrymanager->update_country($country, $citationOne,  $title, $citationTwo, $imageOne, $textIntro, $video, $citationSpeech, $person, $imageTwo, $textOne, $imageThree, $textTwo, $id_country);
   }
 }

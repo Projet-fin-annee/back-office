@@ -22,33 +22,65 @@
     </h1>
     <form class="form" action="index.php?url=newcountry" method="post">
       <div class="form-group">
-        <label for="country">Pays</label>
+        <label for="country">Pays :</label>
         <input type="text" class="form-control" id="country" name="country" />
       </div>
       <div class="form-group">
-        <label for="title">Titre</label>
+        <label for="citationOne">Grande citation 1 :</label>
+        <input type="text" class="form-control" id="citationOne" name="citationOne" />
+      </div>
+      <div class="form-group">
+        <label for="title">Titre :</label>
         <input type="text" class="form-control" id="title" name="title" />
       </div>
       <div class="form-group">
-        <label for="text">Texte</label>
-        <textarea class="form-control" id="text" name="text"></textarea>
+        <label for="citationTwo">Grande citation 2 :</label>
+        <input type="text" class="form-control" id="citationTwo" name="citationTwo" />
       </div>
-
       <div class="form-group">
-        <label for="image">Image :</label>
-        <input type="file" accept=".png,.jpeg" aria-describedby="image" name="image" />
-
-        <small id="image" class="form-text text-muted">Formats acceptés : .png .jpeg
+        <label for="imageOne">Image 1 :</label>
+        <input type="file" accept=".png,.jpeg" aria-describedby="imageOne" name="imageOne" />
+        <small id="imageOne" class="form-text text-muted">Formats acceptés : .png .jpeg
         </small>
       </div>
-
       <div class="form-group">
-        <label for="video">Video :</label>
-        <input type="file" accept=".mp4,.mp3" aria-describedby="video" name="video" />
-        <small id="image" class="form-text text-muted">Formats acceptés : .mp3 .mp4
+        <label for="textIntro"> Texte intro :</label>
+        <textarea type="textIntro" class="form-control" id="textIntro" name="textIntro" /></textarea>
+      </div>
+      <div class="form-group">
+        <label for="video">Bande audio d'un discours :</label>
+        <input type="file" accept=".mp3" aria-describedby="video" name="video" />
+        <small id="image" class="form-text text-muted">Formats acceptés : .mp3
         </small>
       </div>
-
+      <div class="form-group">
+        <label for="citationSpeech">Citation du discours :</label>
+        <textarea class="form-control" id="citationSpeech" name="citationSpeech"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="person">Nom de la personne du discours :</label>
+        <input class="form-control" id="person" name="person"></input>
+      </div>
+      <div class="form-group">
+        <label for="imageTwo">Image 2 :</label>
+        <input type="file" accept=".png,.jpeg" aria-describedby="image" name="imageTwo" />
+        <small id="imageTwo" class="form-text text-muted">Formats acceptés : .png .jpeg
+        </small>
+      </div>
+      <div class="form-group">
+        <label for="textOne">Texte 1 :</label>
+        <textarea class="form-control" id="textOne" name="textOne"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="imageThree">Image 3 :</label>
+        <input type="file" accept=".png,.jpeg" aria-describedby="image" name="imageThree" />
+        <small id="imageThree" class="form-text text-muted">Formats acceptés : .png .jpeg
+        </small>
+      </div>
+      <div class="form-group">
+        <label for="textTwo">Texte 2 :</label>
+        <textarea class="form-control" id="textTwo" name="textTwo"></textarea>
+      </div>
       <button type="submit" class="btn btn-primary">
         Envoyer dans l'API
       </button>

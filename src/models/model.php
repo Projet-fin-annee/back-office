@@ -6,7 +6,7 @@ abstract class Model
 
   private static function setBdd()
   {
-    self::$_bdd = new PDO('mysql:host=localhost; dbname=webdoc;charset=utf8', 'root', 'root');
+    self::$_bdd = new PDO('mysql:host=localhost; dbname=webdoc;charset=utf8', 'root2');
     self::$_bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
   }
 
@@ -18,17 +18,27 @@ abstract class Model
     return self::$_bdd;
   }
 
-  protected function postOneCountry($country, $title, $text, $image, $video)
+  protected function postOneCountry($country, $citationOne,  $title, $citationTwo, $imageOne, $textIntro, $video, $citationSpeech, $person, $imageTwo, $textOne, $imageThree, $textTwo)
   {
+    $req = $this->getBdd()->prepare("INSERT INTO countries (country,citationOne,title,citationTwo,imageOne,textIntro,video,citationSpeech,person,imageTwo,textOne,imageThree,textTwo) VALUES (:country,:citationOne,:title,:citationTwo,:imageOne,:textIntro,:video,:citationSpeech,:person,:imageTwo,:textOne,:imageThree,:textTwo)");
 
-    $req = $this->getBdd()->prepare("INSERT INTO countries (country,title,text,image,video) VALUES (:country,:title,:text,:image,:video)");
+
     $data_type = PDO::PARAM_STR;
     $req->bindValue(":country", $country,  $data_type);
-    $req->bindValue(":title", $title,  $data_type);
-    $req->bindValue(":text", $text, $data_type);
-    $req->bindValue(":image", $image,  $data_type);
+    $req->bindValue(":citationOne", $citationOne,  $data_type);
+    $req->bindValue(":title", $title, $data_type);
+    $req->bindValue(":citationTwo", $citationTwo,  $data_type);
+    $req->bindValue(":imageOne", $imageOne,  $data_type);
+    $req->bindValue(":textIntro", $textIntro,  $data_type);
     $req->bindValue(":video", $video,  $data_type);
+    $req->bindValue(":citationSpeech", $citationSpeech,  $data_type);
+    $req->bindValue(":person", $person,  $data_type);
+    $req->bindValue(":imageTwo", $imageTwo,  $data_type);
+    $req->bindValue(":textOne", $textOne,  $data_type);
+    $req->bindValue(":imageThree", $imageThree,  $data_type);
+    $req->bindValue(":textTwo", $textTwo,  $data_type);
     $req->execute();
+
     return true;
   }
 
@@ -87,9 +97,9 @@ abstract class Model
 
     return $var;
   }
-  protected function updateAllcountries($table, $country, $title, $text, $image, $video, $id_country)
+  protected function updateAllcountries($table, $country, $citationOne,  $title, $citationTwo, $imageOne, $textIntro, $video, $citationSpeech, $person, $imageTwo, $textOne, $imageThree, $textTwo, $id_country)
   {
-    $req = $this->getBdd()->prepare("UPDATE $table SET country='$country', title='$title', text='$text', image='$image', video='$video'  WHERE id=$id_country");
+    $req = $this->getBdd()->prepare("UPDATE $table SET country='$country', citationOne='$citationOne', title='$title', citationTwo='$citationTwo', imageOne='$imageOne',textIntro='$textIntro',video='$video',citationSpeech='$citationSpeech',person='$person', imageTwo='$imageTwo',textOne='$textOne',imageThree='$imageThree',textTwo='$textTwo' WHERE id=$id_country");
 
     $req->execute();
 

@@ -22,47 +22,76 @@
   <form class="container" action="index.php?url=updatecountry&id=<?= $id_country ?>" method="post">
 
     <div>
-
       <div class="form-group">
-        <label for="exampleInputEmail1">Nom du pays :</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="country">exemple</textarea>
-        <small id="emailHelp" class="form-text text-muted">Modifie directement le nom du pays depuis l'espace ci-dessus</small>
+        <label for="country">Pays :</label>
+        <input type="text" class="form-control" id="country" name="country" />
       </div>
-
-
       <div class="form-group">
-        <label for="exampleInputEmail1">Titre :</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="title">exemple</textarea>
-        <small id="emailHelp" class="form-text text-muted">Modifie directement le titre du pays depuis l'espace ci-dessus</small>
+        <label for="citationOne">Grande citation 1 :</label>
+        <input type="text" class="form-control" id="citationOne" name="citationOne" />
       </div>
-
-
       <div class="form-group">
-        <label for="exampleInputEmail1">Texte :</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="text">exemple</textarea>
-        <small id="emailHelp" class="form-text text-muted">Modifie directement le texte depuis l'espace ci-dessus</small>
+        <label for="title">Titre :</label>
+        <input type="text" class="form-control" id="title" name="title" />
       </div>
-
-
       <div class="form-group">
-        <label for="photo">Photo :</label>
-        <input type="file" accept=".png,.jpeg" aria-describedby="video" name="photo" />
-        <small id="image" class="form-text text-muted">Modifie directement la photo depuis l'espace ci-dessus et les formats acceptés sont : .png .jpeg
+        <label for="citationTwo">Grande citation 2 :</label>
+        <input type="text" class="form-control" id="citationTwo" name="citationTwo" />
+      </div>
+      <div class="form-group">
+        <label for="imageOne">Image 1 :</label>
+        <input type="file" accept=".png,.jpeg" aria-describedby="imageOne" name="imageOne" />
+        <small id="imageOne" class="form-text text-muted">Formats acceptés : .png .jpeg
         </small>
       </div>
-
-
       <div class="form-group">
-        <label for="video">Video :</label>
-        <input type="file" accept=".mp4,.mp3" aria-describedby="video" name="video" />
-        <small id="image" class="form-text text-muted">Modifie directement la video depuis l'espace ci-dessus et les formats acceptés sont : .mp3 .mp4
+        <label for="textIntro"> Texte intro :</label>
+        <textarea type="textIntro" class="form-control" id="textIntro" name="textIntro" /></textarea>
+      </div>
+      <div class="form-group">
+        <label for="video">Bande audio d'un discours :</label>
+        <input type="file" accept=".mp3" aria-describedby="video" name="video" />
+        <small id="image" class="form-text text-muted">Formats acceptés : .mp3
         </small>
+      </div>
+      <div class="form-group">
+        <label for="citationSpeech">Citation du discours :</label>
+        <textarea class="form-control" id="citationSpeech" name="citationSpeech"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="person">Nom de la personne du discours :</label>
+        <input class="form-control" id="person" name="person"></input>
+      </div>
+      <div class="form-group">
+        <label for="imageTwo">Image 2 :</label>
+        <input type="file" accept=".png,.jpeg" aria-describedby="image" name="imageTwo" />
+        <small id="imageTwo" class="form-text text-muted">Formats acceptés : .png .jpeg
+        </small>
+      </div>
+      <div class="form-group">
+        <label for="textOne">Texte 1 :</label>
+        <textarea class="form-control" id="textOne" name="textOne"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="imageThree">Image 3 :</label>
+        <input type="file" accept=".png,.jpeg" aria-describedby="image" name="imageThree" />
+        <small id="imageThree" class="form-text text-muted">Formats acceptés : .png .jpeg
+        </small>
+      </div>
+      <div class="form-group">
+        <label for="textTwo">Texte 2 :</label>
+        <textarea class="form-control" id="textTwo" name="textTwo"></textarea>
       </div>
     </div>
-
-
     <button type="submit" class="btn btn-primary">Valider la modification des données
     </button>
+
+
+
+
+
+
+
   </form>
 
 
