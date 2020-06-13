@@ -14,10 +14,6 @@
 </head>
 
 <body>
-
-
-
-
   <div class="modal fade " id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -39,7 +35,7 @@
   </div>
 
   <div class="header">
-    <a href="index.php">
+    <a href="index.php?url=home">
       <img src="assets/img/back.svg" alt="" />
     </a>
   </div>
@@ -71,7 +67,9 @@
             <p class="card-text">
               C'est ici que tu peux ajouter les données sur ce pays.
             </p>
-            <a href="#" class="btn btn-primary">Modifier des données</a>
+            <form action="index.php?url=updateCountry&id=<?= $country["id"]  ?>" method="post">
+              <button type="submit" class=" btn btn-primary">Modifier des données</button>
+            </form>
           </div>
         </div>
       <?php endforeach; ?>

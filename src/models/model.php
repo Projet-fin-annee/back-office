@@ -31,15 +31,22 @@ abstract class Model
     $req->execute();
     return true;
   }
-  
+
   protected function deleteOneCountry($table, $countryId)
   {
     $req = $this->getBdd()->prepare("DELETE FROM $table WHERE  id = $countryId");
-    
+
     $req->execute();
     return true;
   }
 
+  protected function deleteOneDefinition($table, $definitionId)
+  {
+    $req = $this->getBdd()->prepare("DELETE FROM $table WHERE  id = $definitionId");
+
+    $req->execute();
+    return true;
+  }
 
   protected function postOneDefinition($word, $text)
   {
@@ -47,7 +54,6 @@ abstract class Model
     $data_type = PDO::PARAM_STR;
     $req->bindValue(":word", $word,  $data_type);
     $req->bindValue(":text", $text,  $data_type);
-
     $req->execute();
     return true;
   }
@@ -72,14 +78,29 @@ abstract class Model
       return false;
     }
   }
-  
+
   protected function getAll($table)
   {
     $req = $this->getBdd()->prepare("SELECT * FROM $table");
     $req->execute();
     $var = $req->fetchAll(PDO::FETCH_ASSOC);
-    
+
     return $var;
-    
+  }
+  protected function updateAllcountries($table, $country, $title, $text, $image, $video, $id_country)
+  {
+    $req = $this->getBdd()->prepare("UPDATE $table SET country='$country', title='$title', text='$text', image='$image', video='$video'  WHERE id=$id_country");
+
+    $req->execute();
+
+    return true;
+  }
+  protected function updateAlldefinitions($table, $word, $text, $id_definition)
+  {
+    $req = $this->getBdd()->prepare("UPDATE $table SET word='$word', text='$text' WHERE id=$id_definition");
+    $req->execute();
+
+
+    return true;
   }
 }

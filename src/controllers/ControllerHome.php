@@ -5,6 +5,6 @@ class ControllerHome
   public function __construct()
   {
 
-    require_once("./views/viewHomepage.php");
+    require_once("./views/viewHome.php");
   }
 }

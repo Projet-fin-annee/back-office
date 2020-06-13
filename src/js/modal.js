@@ -20,3 +20,26 @@ const deleteCountry = (countryId) => {
     );
   });
 };
+
+const deleteDefinitionEl = document.querySelector("#deleteDefinition");
+const crossDeleteDefinition = document.querySelectorAll(
+  "#crossDeleteDefinition"
+);
+
+for (let index = 0; index < crossDeleteDefinition.length; index++) {
+  const element = crossDeleteDefinition[index];
+
+  element.addEventListener("click", () => {
+    const definitionId = element.getAttribute("data-definitionId");
+    deleteDefinition(definitionId);
+  });
+}
+
+const deleteDefinition = (definitionId) => {
+  deleteDefinitionEl.addEventListener("click", () => {
+    deleteForm.setAttribute(
+      "action",
+      `index.php?url=definition&id=${definitionId}`
+    );
+  });
+};

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Jun 11, 2020 at 06:20 PM
+-- Generation Time: Jun 12, 2020 at 01:44 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.3.8
 
@@ -45,10 +45,7 @@ INSERT INTO `countries` (`
 id`,
 `country
 `, `title`, `text`, `image`, `video`) VALUES
-(3, 'france', 'la france lala', 'lsdl,fiejufjkjejfioerjfgiverfp\r\nvdujfuiejg', 'Capture d’écran 2020-06-04 à 16.35.20.png', ''),
-(4, 'espagne', 'jdjj', 'djjdj', 'jddj', 'djdj'),
-(7, 'eshpagne', 'jdhjj', 'djjdj', 'jddj', 'djdj'),
-(8, '', '', '', '', '');
+(15, 'eee', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -79,7 +76,9 @@ id`,
 (4, '', ''),
 (5, '', ''),
 (6, '', ''),
-(7, '', '');
+(7, '', ''),
+(8, NULL, NULL),
+(9, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -153,14 +152,14 @@ ADD PRIMARY KEY
 --
 ALTER TABLE `countries`
   MODIFY `id` int
-(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `definition`
 --
 ALTER TABLE `definition`
   MODIFY `id` int
-(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`

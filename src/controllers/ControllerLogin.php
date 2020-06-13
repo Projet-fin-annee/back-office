@@ -49,6 +49,6 @@ class ControllerLogin
       throw new Exception("Email or Password Incorrect");
     }
 
-    require_once("views/viewHomepage.php");
+    require_once("views/viewHome.php");
   }
 }
