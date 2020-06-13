@@ -25,7 +25,7 @@ class ControllerNewcountry
     $target_file =  strtolower(uniqid() . basename($_FILES[$assetType]["name"]));
     $target_file_path = $target_dir . $target_file;
     $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($target_file_path, PATHINFO_EXTENSION));
+    $assetFileType = strtolower(pathinfo($target_file_path, PATHINFO_EXTENSION));
     $status;
 
     // Check if image file is a actual image or fake image
@@ -55,8 +55,8 @@ class ControllerNewcountry
 
     // Allow certain file formats
     if (
-      $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-      && $imageFileType != "gif" && $imageFileType != "mp3"
+      $assetFileType != "jpg" && $assetFileType != "png" && $assetFileType != "jpeg"
+      && $assetFileType != "gif" && $assetFileType != "mp3"
     ) {
       $status = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
       $uploadOk = 0;
