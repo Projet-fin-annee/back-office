@@ -93,15 +93,13 @@ abstract class Model
 
     $req->execute();
 
-    var_dump($table, $country, $title, $text, $image, $video, $id_country);
-
     return true;
   }
   protected function updateAlldefinitions($table, $word, $text, $id_definition)
   {
     $req = $this->getBdd()->prepare("UPDATE $table SET word='$word', text='$text' WHERE id=$id_definition");
     $req->execute();
-    var_dump($req);
+
 
     return true;
   }
