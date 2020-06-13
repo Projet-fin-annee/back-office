@@ -6,7 +6,7 @@ abstract class Model
 
   private static function setBdd()
   {
-    self::$_bdd = new PDO('mysql:host=localhost; dbname=webdoc;charset=utf8', 'root2');
+    self::$_bdd = new PDO('mysql:host=localhost; dbname=webdoc;charset=utf8', 'root', 'root');
     self::$_bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
   }
 
@@ -20,15 +20,16 @@ abstract class Model
 
   protected function postOneCountry($country, $title, $text, $image, $video)
   {
-
-    $req = $this->getBdd()->prepare("INSERT INTO countries (country,title,text,image,video) VALUES (:country,:title,:text,:image,:video)");
+    $req = $this->getBdd()->prepare("INSERT INTO countries (country,title,text,image,video) VALUES (:country ,:title , :text , :image , :video)");
     $data_type = PDO::PARAM_STR;
     $req->bindValue(":country", $country,  $data_type);
     $req->bindValue(":title", $title,  $data_type);
     $req->bindValue(":text", $text, $data_type);
     $req->bindValue(":image", $image,  $data_type);
     $req->bindValue(":video", $video,  $data_type);
+   
     $req->execute();
+    
     return true;
   }
 
