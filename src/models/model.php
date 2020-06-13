@@ -31,11 +31,11 @@ abstract class Model
     $req->execute();
     return true;
   }
-  
+
   protected function deleteOneCountry($table, $countryId)
   {
     $req = $this->getBdd()->prepare("DELETE FROM $table WHERE  id = $countryId");
-    
+
     $req->execute();
     return true;
   }
@@ -71,14 +71,23 @@ abstract class Model
       return false;
     }
   }
-  
+
   protected function getAll($table)
   {
     $req = $this->getBdd()->prepare("SELECT * FROM $table");
     $req->execute();
     $var = $req->fetchAll(PDO::FETCH_ASSOC);
-    
+
     return $var;
-    
+  }
+  protected function updateAll($table, $country, $title, $text, $image, $video, $id_country)
+  {
+    $req = $this->getBdd()->prepare("UPDATE $table SET country='$country', title='$title', text='$text', image='$image', video='$video'  WHERE id=$id_country");
+
+    $req->execute();
+
+    var_dump($table, $country, $title, $text, $image, $video, $id_country);
+
+    return true;
   }
 }

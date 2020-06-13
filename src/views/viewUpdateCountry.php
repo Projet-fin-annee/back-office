@@ -10,31 +10,36 @@
 </head>
 
 <body>
+
   <div class="header">
     <a href="index.php?url=countries">
       <img src=" assets/img/back.svg" alt="" />
     </a>
   </div>
+
   <h1 class="title">Modifie les données de l'API grâce aux champs ci-dessous : </h1>
-  <div class="container">
+
+  <form class="container" action="index.php?url=updatecountry&id=<?= $id_country ?>" method="post">
+
     <div>
+
       <div class="form-group">
         <label for="exampleInputEmail1">Nom du pays :</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1">exemple</textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="country">exemple</textarea>
         <small id="emailHelp" class="form-text text-muted">Modifie directement le nom du pays depuis l'espace ci-dessus</small>
       </div>
 
 
       <div class="form-group">
         <label for="exampleInputEmail1">Titre :</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1">exemple</textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name="title">exemple</textarea>
         <small id="emailHelp" class="form-text text-muted">Modifie directement le titre du pays depuis l'espace ci-dessus</small>
       </div>
 
 
       <div class="form-group">
         <label for="exampleInputEmail1">Texte :</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4">exemple</textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="text">exemple</textarea>
         <small id="emailHelp" class="form-text text-muted">Modifie directement le texte depuis l'espace ci-dessus</small>
       </div>
 
@@ -55,9 +60,10 @@
       </div>
     </div>
 
-    <a href="#" class="btn btn-primary">Valider la modification des données
-    </a>
-  </div>
+
+    <button type="submit" class="btn btn-primary">Valider la modification des données
+    </button>
+  </form>
 
 
 </body>

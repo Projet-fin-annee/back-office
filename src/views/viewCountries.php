@@ -67,7 +67,9 @@
             <p class="card-text">
               C'est ici que tu peux ajouter les données sur ce pays.
             </p>
-            <a href="index.php?url=updateCountry" class=" btn btn-primary">Modifier des données</a>
+            <form action="index.php?url=updateCountry&id=<?= $country["id"]  ?>" method="post">
+              <button type="submit" class=" btn btn-primary">Modifier des données</button>
+            </form>
           </div>
         </div>
       <?php endforeach; ?>
