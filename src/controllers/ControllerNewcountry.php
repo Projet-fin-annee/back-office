@@ -45,7 +45,6 @@ class ControllerNewcountry
       $status = "Sorry, file already exists.";
       $uploadOk = 0;
     }
-    var_dump($_FILES[$assetType]["size"]);
 
     // Check file size
     if ($_FILES[$assetType]["size"] > 65621990) {
