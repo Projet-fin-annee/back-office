@@ -14,10 +14,7 @@
 </head>
 
 <body>
-
-
-
-
+  <!-- modal -->
   <div class="modal fade " id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -38,6 +35,23 @@
     </div>
   </div>
 
+  <!-- toast -->
+  <?php if ($actionTitle): ?>
+  <div class="toast" style="position: absolute; top: 20px; right: 20px;" data-delay="2500">
+    <div class="toast-header">
+      <strong class="mr-auto">Success</strong>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      <?= $actionTitle ?>
+    </div>
+  </div>
+  <?php endif ?> 
+
+
+<!-- card list -->
   <div class="header">
     <a href="index.php">
       <img src="assets/img/back.svg" alt="" />

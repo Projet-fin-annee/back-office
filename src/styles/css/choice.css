@@ -51,3 +51,6 @@
     margin: 40px;
     width: 30px;
     cursor: pointer; }
+
+.toast-container {
+  display: flex; }

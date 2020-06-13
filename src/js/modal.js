@@ -20,3 +20,7 @@ const deleteCountry = (countryId) => {
     );
   });
 };
+
+$(document).ready(function () {
+  $(".toast").toast("show");
+});
