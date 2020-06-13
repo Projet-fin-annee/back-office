@@ -5,4 +5,13 @@ class DefinitionManager extends Model
   {
     $this->postOneDefinition($word, $text);
   }
+  public function getDefinition()
+  {
+    return $this->getAll("definition");
+  }
+
+  public function deleteDefinition($definitionId)
+  {
+    return $this->deleteOneDefinition("definition", $definitionId);
+  }
 }
