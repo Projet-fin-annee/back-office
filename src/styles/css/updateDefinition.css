@@ -1,0 +1,27 @@
+.header {
+  width: 90%;
+  margin: 10px auto 0px;
+  display: flex; }
+  .header img {
+    margin: 20px 0 0 40px;
+    width: 30px;
+    cursor: pointer; }
+
+.form-group {
+  width: 100%;
+  padding: 1%; }
+
+.title {
+  margin-bottom: 2%;
+  text-align: center;
+  font-size: 24px;
+  width: 100%; }
+  .title__definition {
+    margin-top: 7%; }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .container__definition {
+    width: 60%; }

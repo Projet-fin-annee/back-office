@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Jun 11, 2020 at 06:20 PM
+-- Generation Time: Jun 13, 2020 at 05:01 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.3.8
 
@@ -28,27 +28,26 @@ CREATE TABLE `countries`
 (100) NOT NULL,
   `country` varchar
 (15) NOT NULL,
+  `citationOne` varchar
+(255) DEFAULT NULL,
   `title` varchar
 (150) DEFAULT NULL,
-  `text` text,
-  `image` varchar
+  `citationTwo` text,
+  `imageOne` varchar
 (1000) DEFAULT NULL,
+  `textIntro` text,
   `video` varchar
-(1000) DEFAULT NULL
+(1000) DEFAULT NULL,
+  `citationSpeech` text,
+  `person` varchar
+(255) DEFAULT NULL,
+  `ImageTwo` varchar
+(1000) DEFAULT NULL,
+  `textOne` text,
+  `ImageThree` varchar
+(1000) DEFAULT NULL,
+  `textTwo` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `countries`
---
-
-INSERT INTO `countries` (`
-id`,
-`country
-`, `title`, `text`, `image`, `video`) VALUES
-(3, 'france', 'la france lala', 'lsdl,fiejufjkjejfioerjfgiverfp\r\nvdujfuiejg', 'Capture d’écran 2020-06-04 à 16.35.20.png', ''),
-(4, 'espagne', 'jdjj', 'djjdj', 'jddj', 'djdj'),
-(7, 'eshpagne', 'jdhjj', 'djjdj', 'jddj', 'djdj'),
-(8, '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -64,22 +63,6 @@ CREATE TABLE `definition`
 (100) DEFAULT NULL,
   `text` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `definition`
---
-
-INSERT INTO `definition` (`
-id`,
-`word
-`, `text`) VALUES
-(1, '', ''),
-(2, 'ff', 'ff'),
-(3, '', ''),
-(4, '', ''),
-(5, '', ''),
-(6, '', ''),
-(7, '', '');
 
 -- --------------------------------------------------------
 
@@ -153,14 +136,14 @@ ADD PRIMARY KEY
 --
 ALTER TABLE `countries`
   MODIFY `id` int
-(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `definition`
 --
 ALTER TABLE `definition`
   MODIFY `id` int
-(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `users`

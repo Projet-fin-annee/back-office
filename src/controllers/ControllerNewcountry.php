@@ -83,11 +83,19 @@ class ControllerNewcountry
     $video_path = $this->upload_asset("video");
 
     $country = $_POST['country'];
+    $citationOne = $_POST['citationOne'];
     $title = $_POST['title'];
-    $text = $_POST['text'];
-    $image = $image_path;
+    $citationTwo = $_POST['citationTwo'];
+    $imageOne = $image_path;
+    $textIntro = $_POST['textIntro'];
     $video = $video_path;
+    $citationSpeech = $_POST['citationSpeech'];
+    $person = $_POST['person'];
+    $imageTwo = $image_path;
+    $textOne = $_POST['textOne'];
+    $imageThree = $image_path;
+    $textTwo = $_POST['textTwo'];
     $this->_newcountrymanager =  new CountriesManager;
-    $this->_newcountrymanager->create_country($country, $title, $text, $image, $video);
+    $this->_newcountrymanager->create_country($country, $citationOne,  $title, $citationTwo, $imageOne, $textIntro, $video, $citationSpeech, $person, $imageTwo, $textOne, $imageThree, $textTwo);
   }
 }

@@ -2,26 +2,26 @@
 <html lang="fr">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
-  <link rel="stylesheet" href="styles/css/form.css" />
-
-  <title>Ajouter un pays</title>
+  <link rel="stylesheet" href="styles/css/updateDefinition.css" />
+  <title>Modifie un pays</title>
 </head>
 
 <body>
+
   <div class="header">
     <a href="index.php?url=countries">
-      <img src="assets/img/back.svg" alt="" />
+      <img src=" assets/img/back.svg" alt="" />
     </a>
   </div>
-  <div class="container">
-    <h1 class="title">
-      À toi d'ajouter les données grâce à ce formulaire :
-    </h1>
-   
-    <form class="form" action="index.php?url=newcountry" method="post" enctype="multipart/form-data">
+
+  <h1 class="title">Modifie les données de l'API grâce aux champs ci-dessous : </h1>
+
+  <form class="container" action="index.php?url=updatecountry&id=<?= $id_country ?>" method="post">
+
+    <div>
       <div class="form-group">
         <label for="country">Pays :</label>
         <input type="text" class="form-control" id="country" name="country" />
@@ -82,11 +82,19 @@
         <label for="textTwo">Texte 2 :</label>
         <textarea class="form-control" id="textTwo" name="textTwo"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">
-        Envoyer dans l'API
-      </button>
-    </form>
-  </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Valider la modification des données
+    </button>
+
+
+
+
+
+
+
+  </form>
+
+
 </body>
 
 </html>
