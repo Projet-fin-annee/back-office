@@ -18,7 +18,7 @@ class ControllerCountries
       require_once("./views/viewCountries.php");
     }
     else{
-      $this->displayCountries();
+      $this->displayCountries(null);
     }
   }
 
