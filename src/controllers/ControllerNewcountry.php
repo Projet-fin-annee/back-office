@@ -6,38 +6,13 @@ class ControllerNewcountry
   private $_newcountrymanager;
   public function __construct($url)
   {
-
     if (
       isset($url) && count(explode('&', $_SERVER['QUERY_STRING']))
       > 1
     ) {
       throw new Exception("Page introuvable");
     } else {
-
-      $this->create_newcountry();
-      require_once("./views/viewNewcountry.php");
-    }
-  }
-
-  public function upload_asset($assetType)
-  {
-    $target_dir = "uploads/$assetType/";
-    $target_file =  strtolower(uniqid() . basename($_FILES[$assetType]["name"]));
-    $target_file_path = $target_dir . $target_file;
-    $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($target_file_path, PATHINFO_EXTENSION));
-    $status;
-
-    // Check if image file is a actual image or fake image
-    if (isset($_POST["submit"])) {
-      $check = getimagesize($_FILES[$assetType]["tmp_name"]);
-      if ($check !== false) {
-        $status = "File is an image - " . $check["mime"] . ".";
-        $uploadOk = 1;
-      } else {
-        $status = "File is not an image.";
-        $uploadOk = 0;
-      }
+      require_once("./views/viewNewCountry.php");
     }
 
     // Check if file already exists

@@ -21,7 +21,7 @@
       À toi d'ajouter les données grâce à ce formulaire :
     </h1>
    
-    <form class="form" action="index.php?url=newcountry" method="post" enctype="multipart/form-data">
+    <form class="form" action="index.php?url=countries&action=addcountry" method="post" enctype="multipart/form-data">
       <div class="form-group">
         <label for="country">Pays :</label>
         <input type="text" class="form-control" id="country" name="country" />

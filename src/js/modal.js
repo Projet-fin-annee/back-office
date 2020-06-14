@@ -43,3 +43,7 @@ const deleteDefinition = (definitionId) => {
     );
   });
 };
+
+$(document).ready(function () {
+  $(".toast").toast("show");
+});
