@@ -1,6 +1,6 @@
-# back-office
+# Back-office groupe 6
 
-Explication pour lancer le back-office (envoyer des données dans la base de donnée) : 
+## Explication pour lancer le back-office (envoyer des données dans la base de donnée) : 
 
 1 - Clôner/ Pull ce repository back-office 
 
@@ -21,3 +21,14 @@ user : `admin@admin.com`
 password : `Reçu par mail le jour de la présentation`
 
 9 - Envoyer les données que vous voulez utilisez en front depuis cette interface
+
+
+## Explication pour modifier le style du back-office : 
+
+1- faire les étapes 1 à 8 de l'explication précedente
+
+2- Dans le shell lancer la commande `yarn install`
+
+3- Puis la commande `yarn start`
+
+4- Pour pouvoir faire des changements dans le style du back-office il y'a besoin de lancer le prépocesseur `node-sass` avec la commande `yarn scss`.
