@@ -29,3 +29,8 @@ tmp/
 
 # Brunch output folder.
 public/
+
+#folders
+
+src/uploads/image/
+src/uploads/video/

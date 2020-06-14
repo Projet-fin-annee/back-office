@@ -6,7 +6,7 @@ abstract class Model
 
   private static function setBdd()
   {
-    self::$_bdd = new PDO('mysql:host=localhost; dbname=webdoc;charset=utf8', 'root2');
+    self::$_bdd = new PDO('mysql:host=localhost; dbname=webdoc;charset=utf8', 'root', 'root');
     self::$_bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
   }
 
@@ -47,6 +47,7 @@ abstract class Model
     $req = $this->getBdd()->prepare("DELETE FROM $table WHERE  id = $countryId");
 
     $req->execute();
+
     return true;
   }
 
