@@ -6,9 +6,9 @@ abstract class Model
 
   private static function setBdd()
   {
-    var_dump("test");
+    echo "test";
     self::$_bdd = new PDO('mysql:host=custom-x5lq.mysql.eu2.frbit.com; dbname=custom-x5lq;charset=utf8', 'custom-x5lq', 'I8SIS0.rKUSCWdRH8kQ7HWCq');
-    var_dump("test2");
+    echo "test2";
     self::$_bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
   }
 
