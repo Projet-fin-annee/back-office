@@ -20,11 +20,19 @@
     <h1 class="title">
       À toi d'ajouter les données grâce à ce formulaire :
     </h1>
-   
+
     <form class="form" action="index.php?url=countries&action=addcountry" method="post" enctype="multipart/form-data">
       <div class="form-group">
         <label for="country">Pays :</label>
         <input type="text" class="form-control" id="country" name="country" />
+      </div>
+      <div class="form-group">
+        <label for="htag">Htag :</label>
+        <input type="text" class="form-control" id="htag" name="htag" />
+      </div>
+      <div class="form-group">
+        <label for="victimsName"> Nom des victimes :</label>
+        <textarea type="textIntro" class="form-control" id="victimsName" name="victimsName" /></textarea>
       </div>
       <div class="form-group">
         <label for="citationOne">Grande citation 1 :</label>
@@ -46,7 +54,11 @@
       </div>
       <div class="form-group">
         <label for="textIntro"> Texte intro :</label>
-        <textarea type="textIntro" class="form-control" id="textIntro" name="textIntro" /></textarea>
+        <textarea type="text" class="form-control" id="textIntro" name="textIntro" /></textarea>
+      </div>
+      <div class="form-group">
+        <label for="titleSpeech"> Titre du speech :</label>
+        <textarea type="text" class="form-control" id="titleSpeech" name="titleSpeech" /></textarea>
       </div>
       <div class="form-group">
         <label for="video">Bande audio d'un discours :</label>

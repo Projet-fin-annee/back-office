@@ -6,18 +6,16 @@ class ControllerCountries
 
   public function __construct()
   {
-
-    if($_GET["id"]){
+    if ($_GET["id"]) {
       $this->deleteCountry();
       $this->displayCountries("delete");
       require_once("./views/viewCountries.php");
-
-    } elseif ($_GET["action"]){
+    } elseif ($_GET["action"]) {
       $this->create_newcountry();
+
       $this->displayCountries("add");
       require_once("./views/viewCountries.php");
-    }
-    else{
+    } else {
       $this->displayCountries(null);
     }
   }
@@ -27,27 +25,26 @@ class ControllerCountries
 
     $this->_countryManager = new CountriesManager;
     $countries = $this->_countryManager->deleteCountry($_GET["id"]);
-  
   }
 
   public function displayCountries($action)
   {
     $this->_countryManager = new CountriesManager;
     $countries = $this->_countryManager->getCountries();
-    if($action == "add"){
+    if ($action == "add") {
       $actionTitle = "Le pays à bien était rajouté à la liste.";
     } else if ($action == "delete") {
       $actionTitle = "Le pays à bien était supprimé de la liste.";
-    } else{
-      $actionTitle =null;
+    } else {
+      $actionTitle = null;
     }
     require_once("./views/viewCountries.php");
   }
 
-  public function upload_asset($assetType)
+  public function upload_asset($assetType, $assetName)
   {
     $target_dir = "uploads/$assetType/";
-    $target_file =  strtolower(uniqid() . basename($_FILES[$assetType]["name"]));
+    $target_file =  strtolower(uniqid() . basename($_FILES[$assetName]["name"]));
     $target_file_path = $target_dir . $target_file;
     $uploadOk = 1;
     $assetFileType = strtolower(pathinfo($target_file_path, PATHINFO_EXTENSION));
@@ -55,7 +52,7 @@ class ControllerCountries
 
     // Check if image file is a actual image or fake image
     if (isset($_POST["submit"])) {
-      $check = getimagesize($_FILES[$assetType]["tmp_name"]);
+      $check = getimagesize($_FILES[$assetName]["tmp_name"]);
       if ($check !== false) {
         $status = "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
@@ -72,7 +69,7 @@ class ControllerCountries
     }
 
     // Check file size
-    if ($_FILES[$assetType]["size"] > 65621990) {
+    if ($_FILES[$assetName]["size"] > 65621990) {
       $status = "Sorry, your file is too large.";
       $uploadOk = 0;
     }
@@ -91,8 +88,8 @@ class ControllerCountries
       $status = "Sorry, your file was not uploaded.";
       // if everything is ok, try to upload file
     } else {
-      if (move_uploaded_file($_FILES[$assetType]["tmp_name"], $target_file_path)) {
-        $status = "The file " . basename($_FILES[$assetType]["name"]) . " has been uploaded.";
+      if (move_uploaded_file($_FILES[$assetName]["tmp_name"], $target_file_path)) {
+        $status = "The file " . basename($_FILES[$assetName]["name"]) . " has been uploaded.";
       } else {
         $status = "Sorry, there was an error uploading your file.";
       }
@@ -103,16 +100,29 @@ class ControllerCountries
 
   public function create_newcountry()
   {
-    $image_path = $this->upload_asset("image");
-    $video_path = $this->upload_asset("video");
+    $image_path_1 = $this->upload_asset("image", "imageOne");
+    $image_path_2 = $this->upload_asset("image", "imageTwo");
+    $image_path_3 = $this->upload_asset("image", "imageThree");
+    $video_path = $this->upload_asset("video", "video");
+
 
     $country = $_POST['country'];
+    $htag = $_POST['htag'];
+    $victimsName = $_POST['victimsName'];
+    $citationOne = $_POST['citationOne'];
     $title = $_POST['title'];
-    $text = $_POST['text'];
-    $image = $image_path;
+    $citationTwo = $_POST['citationTwo'];
+    $imageOne = $image_path_1;
+    $textIntro = $_POST['textIntro'];
+    $titleSpeech = $_POST['titleSpeech'];
     $video = $video_path;
+    $citationSpeech = $_POST['citationSpeech'];
+    $person = $_POST['person'];
+    $imageTwo = $image_path_2;
+    $textOne = $_POST['textOne'];
+    $imageThree = $image_path_3;
+    $textTwo = $_POST['textTwo'];
     $this->_newcountrymanager =  new CountriesManager;
-    $this->_newcountrymanager->create_country($country, $title, $text, $image, $video);
-    
+    $this->_newcountrymanager->create_country($country, $htag, $victimsName, $citationOne,  $title, $citationTwo, $imageOne, $textIntro, $titleSpeech, $video, $citationSpeech, $person, $imageTwo, $textOne, $imageThree, $textTwo);
   }
 }
