@@ -7,16 +7,17 @@ class Router
   {
     try {
       spl_autoload_register(function ($class) {
-        require_once('models/' . $class . '.php');
+        require_once('src/models/' . $class . '.php');
       });
 
       $url = '';
 
       if (isset($_GET['url']) &&  $_SESSION["login"] == "OK") {
+
         $url = explode('/', filter_var($_GET['url'], FILTER_SANITIZE_URL));
         $controller = ucfirst(strtolower($url[0]));
         $controllerClass = "Controller" . $controller;
-        $controllerFile = "controllers/" . $controllerClass . ".php";
+        $controllerFile = "src/controllers/" . $controllerClass . ".php";
 
         if (file_exists($controllerFile)) {
           require_once($controllerFile);
@@ -25,7 +26,7 @@ class Router
           throw new Exception("Page introuvable");
         }
       } else {
-        require_once("controllers/ControllerLogin.php");
+        require_once("src/controllers/ControllerLogin.php");
 
         new ControllerLogin($url);
       }

@@ -2,6 +2,7 @@
 
 class ControllerLogin
 {
+
   private $_loginManager;
 
   public function __construct($url)
@@ -34,7 +35,7 @@ class ControllerLogin
     if (isset($email) && !isset($emailErr) && isset($password) && !isset($passwordErr)) {
       $this->login();
     } else {
-      require_once("views/viewLogin.php");
+      require_once("src/views/viewLogin.php");
     }
   }
   public function login()
@@ -45,10 +46,10 @@ class ControllerLogin
 
     $login = $this->_loginManager->login_user($_POST['email'], $_POST['password']);
     if (!$login) {
-      require_once("views/viewLogin.php");
+      require_once("src/views/viewLogin.php");
       throw new Exception("Email or Password Incorrect");
     }
 
-    require_once("views/viewHome.php");
+    require_once("src/views/viewHome.php");
   }
 }

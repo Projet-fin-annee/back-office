@@ -15,7 +15,7 @@ class ControllerUpdatecountry
       $this->update_countries();
       $id_country = $_GET['id'];
 
-      require_once("./views/viewUpdateCountry.php");
+      require_once("src/./views/viewUpdateCountry.php");
     }
   }
 

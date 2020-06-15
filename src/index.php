@@ -1,12 +1,13 @@
 <?php
 
 define("URL", str_replace("index.php", "", (isset($_SERVER["HTTPS"]) ? "https" : "http") . "://$_SERVER[HTTP_HOST]"));
+
 if ($_SESSION["login"] == NULL) {
 
   session_start();
 }
 
-require_once('controllers/Router.php');
+require_once('src/controllers/Router.php');
 
 $router = new Router();
 $router->routeReq();

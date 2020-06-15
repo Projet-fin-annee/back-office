@@ -10,7 +10,7 @@ class ControllerNewcountry
     ) {
       throw new Exception("Page introuvable");
     } else {
-      require_once("./views/viewNewCountry.php");
+      require_once("src/./views/viewNewCountry.php");
     }
   }
 }

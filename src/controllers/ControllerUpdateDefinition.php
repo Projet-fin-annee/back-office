@@ -16,7 +16,7 @@ class ControllerUpdatedefinition
 
       $id_definition = $_GET['id'];
 
-      require_once("./views/viewUpdateDefinition.php");
+      require_once("src/./views/viewUpdateDefinition.php");
     }
   }
 

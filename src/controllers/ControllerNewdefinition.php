@@ -14,7 +14,7 @@ class ControllerNewdefinition
     } else {
 
       $this->create_newdefinition();
-      require_once("./views/viewNewdefinition.php");
+      require_once("src/./views/viewNewdefinition.php");
     }
   }
 

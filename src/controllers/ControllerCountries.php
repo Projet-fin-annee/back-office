@@ -9,12 +9,12 @@ class ControllerCountries
     if ($_GET["id"]) {
       $this->deleteCountry();
       $this->displayCountries("delete");
-      require_once("./views/viewCountries.php");
+      require_once("src/./views/viewCountries.php");
     } elseif ($_GET["action"]) {
       $this->create_newcountry();
 
       $this->displayCountries("add");
-      require_once("./views/viewCountries.php");
+      require_once("src/./views/viewCountries.php");
     } else {
       $this->displayCountries(null);
     }
@@ -38,7 +38,7 @@ class ControllerCountries
     } else {
       $actionTitle = null;
     }
-    require_once("./views/viewCountries.php");
+    require_once("src/./views/viewCountries.php");
   }
 
   public function upload_asset($assetType, $assetName)

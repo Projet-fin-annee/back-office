@@ -1,1 +1,1 @@
-<?php echo "test";
+<?php include(__DIR__ . '/src/index.php');
