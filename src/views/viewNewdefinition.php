@@ -12,7 +12,7 @@
 <body>
   <div class="header">
     <a href="index.php?url=definition">
-      <img src="src/assets/img/back.svg" alt="" />
+      <img src="assets/img/back.svg" alt="" />
     </a>
   </div>
   <div class="container">
@@ -28,7 +28,6 @@
         <label for="text">Texte</label>
         <textarea class="form-control" id="text" name="text"></textarea>
       </div>
-
       <button type="submit" class="btn btn-primary">
         Envoyer dans l'API
       </button>

@@ -13,6 +13,8 @@ class ControllerLogin
     ) {
       throw new Exception("Page introuvable");
     } else {
+      require_once('models/LoginManager.php');
+
       $this->checkForm();
     }
   }
@@ -35,21 +37,18 @@ class ControllerLogin
     if (isset($email) && !isset($emailErr) && isset($password) && !isset($passwordErr)) {
       $this->login();
     } else {
-      require_once("src/views/viewLogin.php");
+
+      require_once("views/viewLogin.php");
     }
   }
   public function login()
   {
-
-
     $this->_loginManager = new LoginManager;
-
     $login = $this->_loginManager->login_user($_POST['email'], $_POST['password']);
     if (!$login) {
-      require_once("src/views/viewLogin.php");
+      require_once("views/viewLogin.php");
       throw new Exception("Email or Password Incorrect");
     }
-
-    require_once("src/views/viewHome.php");
+    require_once("views/viewHome.php");
   }
 }

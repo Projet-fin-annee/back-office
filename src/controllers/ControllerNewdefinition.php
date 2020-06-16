@@ -12,9 +12,9 @@ class ControllerNewdefinition
     ) {
       throw new Exception("Page introuvable");
     } else {
-
+      require_once('models/DefinitionManager.php');
       $this->create_newdefinition();
-      require_once("src/./views/viewNewdefinition.php");
+      require_once("views/viewNewdefinition.php");
     }
   }
 

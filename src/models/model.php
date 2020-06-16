@@ -6,9 +6,11 @@ abstract class Model
 
   private static function setBdd()
   {
-    echo "test";
+    //online bdd conexion
     self::$_bdd = new PDO('mysql:host=custom-x5lq.mysql.eu2.frbit.com; dbname=custom-x5lq;charset=utf8', 'custom-x5lq', 'I8SIS0.rKUSCWdRH8kQ7HWCq');
-    echo "test2";
+    //local bdd connexion
+    // self::$_bdd = new PDO('mysql:host=localhost; dbname=webdoc;charset=utf8', 'root2');
+
     self::$_bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
   }
 
@@ -20,14 +22,14 @@ abstract class Model
     return self::$_bdd;
   }
 
-  protected function postOneCountry($country, $htag, $victimsName, $citationOne,  $title, $citationTwo, $imageOne, $textIntro, $titleSpeech, $video, $citationSpeech, $person, $imageTwo, $textOne, $imageThree, $textTwo)
+  protected function postOneCountry($country, $imageBackground, $htag, $victimsName, $citationOne,  $title, $citationTwo, $imageOne, $textIntro, $titleSpeech, $video, $citationSpeech, $person, $imageTwo, $textOne, $imageThree, $textTwo)
   {
-    $req = $this->getBdd()->prepare("INSERT INTO countries (country,htag,victimsName,citationOne,title,citationTwo,imageOne,textIntro,titleSpeech,video,citationSpeech,person,imageTwo,textOne,imageThree,textTwo) VALUES (:country,:htag,:victimsName,:citationOne,:title,:citationTwo,:imageOne,:textIntro,:titleSpeech,:video,:citationSpeech,:person,:imageTwo,:textOne,:imageThree,:textTwo)");
-
+    $req = $this->getBdd()->prepare("INSERT INTO countries (country,imageBackground,htag,victimsName,citationOne,title,citationTwo,imageOne,textIntro,titleSpeech,video,citationSpeech,person,imageTwo,textOne,imageThree,textTwo) VALUES (:country,:imageBackground,:htag,:victimsName,:citationOne,:title,:citationTwo,:imageOne,:textIntro,:titleSpeech,:video,:citationSpeech,:person,:imageTwo,:textOne,:imageThree,:textTwo)");
 
     $data_type = PDO::PARAM_STR;
     $req->bindValue(":country", $country,  $data_type);
-    $req->bindValue(":htag", $$htag,  $data_type);
+    $req->bindValue(":imageBackground", $imageBackground,  $data_type);
+    $req->bindValue(":htag", $htag,  $data_type);
     $req->bindValue(":victimsName", $victimsName,  $data_type);
     $req->bindValue(":citationOne", $citationOne,  $data_type);
     $req->bindValue(":title", $title, $data_type);
@@ -50,7 +52,6 @@ abstract class Model
   protected function deleteOneCountry($table, $countryId)
   {
     $req = $this->getBdd()->prepare("DELETE FROM $table WHERE  id = $countryId");
-
     $req->execute();
 
     return true;
@@ -59,8 +60,8 @@ abstract class Model
   protected function deleteOneDefinition($table, $definitionId)
   {
     $req = $this->getBdd()->prepare("DELETE FROM $table WHERE  id = $definitionId");
-
     $req->execute();
+
     return true;
   }
 
@@ -103,14 +104,24 @@ abstract class Model
 
     return $var;
   }
-  protected function updateAllcountries($table, $country, $htag, $victimsName, $citationOne,  $title, $citationTwo, $imageOne, $textIntro, $titleSpeech, $video, $citationSpeech, $person, $imageTwo, $textOne, $imageThree, $textTwo, $id_country)
-  {
-    $req = $this->getBdd()->prepare("UPDATE $table SET country='$country',htag='$htag',victimsName='$victimsName', citationOne='$citationOne', title='$title', citationTwo='$citationTwo', imageOne='$imageOne',textIntro='$textIntro',titleSpeech='$titleSpeech',video='$video',citationSpeech='$citationSpeech',person='$person', imageTwo='$imageTwo',textOne='$textOne',imageThree='$imageThree',textTwo='$textTwo' WHERE id=$id_country");
 
+  protected function getOneCountry($table, $id_country)
+  {
+    $req = $this->getBdd()->prepare("SELECT * FROM $table WHERE id=$id_country");
+    $req->execute();
+    $country = $req->fetch(PDO::FETCH_ASSOC);
+    return $country;
+  }
+
+  protected function updateOnecountries($table, $country, $imageBackground, $htag, $victimsName, $citationOne,  $title, $citationTwo, $imageOne, $textIntro, $titleSpeech, $video, $citationSpeech, $person, $imageTwo, $textOne, $imageThree, $textTwo, $id_country)
+  {
+
+    $req = $this->getBdd()->prepare("UPDATE $table SET country='$country',imageBackground='$imageBackground',htag='$htag',victimsName='$victimsName', citationOne='$citationOne', title='$title', citationTwo='$citationTwo', imageOne='$imageOne',textIntro='$textIntro',titleSpeech='$titleSpeech',video='$video',citationSpeech='$citationSpeech',person='$person', imageTwo='$imageTwo',textOne='$textOne',imageThree='$imageThree',textTwo='$textTwo' WHERE id=$id_country");
     $req->execute();
 
     return true;
   }
+
   protected function updateAlldefinitions($table, $word, $text, $id_definition)
   {
     $req = $this->getBdd()->prepare("UPDATE $table SET word='$word', text='$text' WHERE id=$id_definition");

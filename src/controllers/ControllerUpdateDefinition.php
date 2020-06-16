@@ -11,12 +11,13 @@ class ControllerUpdatedefinition
     ) {
       throw new Exception("Page introuvable");
     } else {
+      require_once('models/UpdatedefinitionManager.php');
 
       $this->update_definitions();
 
       $id_definition = $_GET['id'];
 
-      require_once("src/./views/viewUpdateDefinition.php");
+      require_once("views/viewUpdateDefinition.php");
     }
   }
 

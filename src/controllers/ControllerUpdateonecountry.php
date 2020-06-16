@@ -1,46 +1,40 @@
 <?php
 
-class ControllerCountries
+class ControllerUpdateonecountry
 {
-  private $_countryManager;
-
-  public function __construct()
+  private $_updatecountrymanager;
+  public function __construct($url)
   {
+    require_once('models/UpdatecountryManager.php');
     require_once('models/CountriesManager.php');
-    if ($_GET["id"]) {
-      $this->deleteCountry();
-      $this->displayCountries("delete");
-      require_once("views/viewCountries.php");
-    } elseif ($_GET["action"]) {
-      $this->create_newcountry();
-
-      $this->displayCountries("add");
+    if (
+      isset($url) && count(explode('&', $_SERVER['QUERY_STRING']))
+      > 3
+    ) {
+      throw new Exception("Page introuvable");
+    } else if ($_GET["action"]) {
+      $this->update_countries();
+      $this->displayCountries("update");
       require_once("views/viewCountries.php");
     } else {
-      $this->displayCountries(null);
+      $id_country = $_GET['id'];
+      $this->_updatecountrymanager =  new UpdatecountryManager;
+      $country = $this->_updatecountrymanager->getCountry($id_country);
+
+      require_once("views/viewUpdateCountry.php");
     }
   }
-
-  public function deleteCountry()
-  {
-    $this->_countryManager = new CountriesManager;
-    $countries = $this->_countryManager->deleteCountry($_GET["id"]);
-  }
-
   public function displayCountries($action)
   {
     $this->_countryManager = new CountriesManager;
     $countries = $this->_countryManager->getCountries();
-    if ($action == "add") {
-      $actionTitle = "Le pays à bien était rajouté à la liste.";
-    } else if ($action == "delete") {
-      $actionTitle = "Le pays à bien était supprimé de la liste.";
+    if ($action == "update") {
+      $actionTitle = "Le pays à bien était modifié dans la liste.";
     } else {
       $actionTitle = null;
     }
     require_once("views/viewCountries.php");
   }
-
   public static function slugify($text)
   {
     // replace non letter or digits by -
@@ -61,7 +55,6 @@ class ControllerCountries
 
     return $text;
   }
-
   public function upload_asset($assetType, $assetName)
   {
     $target_dir = "uploads/$assetType/";
@@ -117,9 +110,10 @@ class ControllerCountries
     }
     return $target_file;
   }
-
-  public function create_newcountry()
+  public function update_countries()
   {
+    $id_country = (int) $_GET['id'];
+
     $image_path_1 = $this->upload_asset("image", "imageOne");
     $image_path_principal = $this->upload_asset("image", "imageBackground");
     $image_path_2 = $this->upload_asset("image", "imageTwo");
@@ -143,7 +137,7 @@ class ControllerCountries
     $textOne = $_POST['textOne'];
     $imageThree = $image_path_3;
     $textTwo = $_POST['textTwo'];
-    $this->_newcountrymanager =  new CountriesManager;
-    $this->_newcountrymanager->create_country($country, $imageBackground, $htag, $victimsName, $citationOne,  $title, $citationTwo, $imageOne, $textIntro, $titleSpeech, $video, $citationSpeech, $person, $imageTwo, $textOne, $imageThree, $textTwo);
+    $this->_updatecountrymanager =  new UpdatecountryManager;
+    $this->_updatecountrymanager->update_country($country, $imageBackground, $htag, $victimsName, $citationOne,  $title, $citationTwo, $imageOne, $textIntro, $titleSpeech, $video, $citationSpeech, $person, $imageTwo, $textOne, $imageThree, $textTwo, $id_country);
   }
 }

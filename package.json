@@ -6,7 +6,7 @@
   "author": "tania-abitbol <tabitbol@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "scss": "node-sass --watch src/styles/scss -o src/styles/css"
+    "scss": "node-sass --watch styles/scss -o styles/css"
   },
   "devDependencies": {
     "node-sass": "^4.13.1"

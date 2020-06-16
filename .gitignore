@@ -32,5 +32,5 @@ public/
 
 #folders
 
-src/uploads/image/
-src/uploads/video/
+# uploads/image/
+# uploads/video/
