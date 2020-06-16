@@ -1,4 +1,5 @@
 <?php
+
 class LoginManager extends Model
 {
   public function login_user($email, $password)

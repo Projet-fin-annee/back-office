@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
   <link rel="stylesheet" href="src/styles/css/choice.css" />
-  <script src="src/js/modal.js" defer></script>
+  <script src="js/modal.js" defer></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -36,7 +36,7 @@
 
   <div class="header">
     <a href="index.php?url=home">
-      <img src="src/assets/img/back.svg" alt="" />
+      <img src="assets/img/back.svg" alt="" />
     </a>
   </div>
   <div class="container">
@@ -49,11 +49,11 @@
         <div class="card-body">
           <div>
             <a class="img-container" href="index.php?url=newdefinition">
-              <img src="src/assets/img/more.svg" alt="" /></a>
+              <img src="assets/img/more.svg" alt="" /></a>
           </div>
         </div>
       </div>
-
+      <!-- card list -->
       <?php
 
       foreach ($definitions as $definition) :
@@ -62,7 +62,7 @@
           <div class="card-body">
 
             <div id="crossDeleteDefinition" class="card-head" data-target="#staticBackdrop" data-toggle="modal" data-definitionId=<?= $definition["id"]; ?>>
-              <img src="src/assets/img/close.svg" alt="" />
+              <img src="assets/img/close.svg" alt="" />
             </div>
             <h5 class="card-title"><?= $definition["word"]; ?></h5>
             <p class="card-text">

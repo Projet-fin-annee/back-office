@@ -6,7 +6,7 @@ class ControllerDefinition
 
   public function __construct()
   {
-
+    require_once('models/DefinitionManager.php');
     if ($_GET["id"]) {
 
       $this->deleteDefinition();
@@ -21,7 +21,7 @@ class ControllerDefinition
     $this->_definitionManager = new DefinitionManager;
     $definitions = $this->_definitionManager->deleteDefinition($_GET["id"]);
     $this->displayDefinitions();
-    require_once("src/./views/viewDefinition.php");
+    require_once("views/viewDefinition.php");
   }
 
   public function displayDefinitions()
@@ -29,6 +29,6 @@ class ControllerDefinition
     $this->_definitionManager = new DefinitionManager;
     $definitions = $this->_definitionManager->getDefinition();
 
-    require_once("src/./views/viewDefinition.php");
+    require_once("views/viewDefinition.php");
   }
 }

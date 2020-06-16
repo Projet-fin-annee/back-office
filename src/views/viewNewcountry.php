@@ -13,7 +13,7 @@
 <body>
   <div class="header">
     <a href="index.php?url=countries">
-      <img src="src/assets/img/back.svg" alt="" />
+      <img src="assets/img/back.svg" alt="" />
     </a>
   </div>
   <div class="container">
@@ -23,8 +23,14 @@
 
     <form class="form" action="index.php?url=countries&action=addcountry" method="post" enctype="multipart/form-data">
       <div class="form-group">
-        <label for="country">Pays :</label>
+        <label for="country">Nom du Pays :</label>
         <input type="text" class="form-control" id="country" name="country" />
+      </div>
+      <div class="form-group">
+        <label for="imageBackground">Image background :</label>
+        <input type="file" accept=".png,.jpeg" aria-describedby="image" name="imageBackground" />
+        <small id="imageBackground" class="form-text text-muted">Formats acceptés : .png .jpeg
+        </small>
       </div>
       <div class="form-group">
         <label for="htag">Htag :</label>
@@ -39,15 +45,7 @@
         <input type="text" class="form-control" id="citationOne" name="citationOne" />
       </div>
       <div class="form-group">
-        <label for="title">Titre :</label>
-        <input type="text" class="form-control" id="title" name="title" />
-      </div>
-      <div class="form-group">
-        <label for="citationTwo">Grande citation 2 :</label>
-        <input type="text" class="form-control" id="citationTwo" name="citationTwo" />
-      </div>
-      <div class="form-group">
-        <label for="imageOne">Image 1 :</label>
+        <label for="imageOne">Image de le personne incrustée dans un pays :</label>
         <input type="file" accept=".png,.jpeg" aria-describedby="imageOne" name="imageOne" />
         <small id="imageOne" class="form-text text-muted">Formats acceptés : .png .jpeg
         </small>
@@ -61,18 +59,22 @@
         <textarea type="text" class="form-control" id="titleSpeech" name="titleSpeech" /></textarea>
       </div>
       <div class="form-group">
+        <label for="citationSpeech">Citation du discours :</label>
+        <textarea class="form-control" id="citationSpeech" name="citationSpeech"></textarea>
+      </div>
+      <div class="form-group">
         <label for="video">Bande audio d'un discours :</label>
         <input type="file" accept=".mp3" aria-describedby="video" name="video" />
         <small id="image" class="form-text text-muted">Formats acceptés : .mp3
         </small>
       </div>
       <div class="form-group">
-        <label for="citationSpeech">Citation du discours :</label>
-        <textarea class="form-control" id="citationSpeech" name="citationSpeech"></textarea>
-      </div>
-      <div class="form-group">
         <label for="person">Nom de la personne du discours :</label>
         <input class="form-control" id="person" name="person"></input>
+      </div>
+      <div class="form-group">
+        <label for="title">Titre géneral :</label>
+        <input type="text" class="form-control" id="title" name="title" />
       </div>
       <div class="form-group">
         <label for="imageTwo">Image 2 :</label>
@@ -83,6 +85,10 @@
       <div class="form-group">
         <label for="textOne">Texte 1 :</label>
         <textarea class="form-control" id="textOne" name="textOne"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="citationTwo">Grande citation 2 :</label>
+        <input type="text" class="form-control" id="citationTwo" name="citationTwo" />
       </div>
       <div class="form-group">
         <label for="imageThree">Image 3 :</label>
