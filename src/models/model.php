@@ -7,9 +7,9 @@ abstract class Model
   private static function setBdd()
   {
     //online bdd conexion
-    self::$_bdd = new PDO('mysql:host=custom-x5lq.mysql.eu2.frbit.com; dbname=custom-x5lq;charset=utf8', 'custom-x5lq', 'I8SIS0.rKUSCWdRH8kQ7HWCq');
+    // self::$_bdd = new PDO('mysql:host=custom-x5lq.mysql.eu2.frbit.com; dbname=custom-x5lq;charset=utf8', 'custom-x5lq', 'I8SIS0.rKUSCWdRH8kQ7HWCq');
     //local bdd connexion
-    // self::$_bdd = new PDO('mysql:host=localhost; dbname=webdoc;charset=utf8', 'root2');
+    self::$_bdd = new PDO('mysql:host=localhost; dbname=webdoc;charset=utf8', 'root2');
 
     self::$_bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
   }
@@ -22,9 +22,9 @@ abstract class Model
     return self::$_bdd;
   }
 
-  protected function postOneCountry($country, $imageBackground, $htag, $victimsName, $citationOne,  $title, $citationTwo, $imageOne, $textIntro, $titleSpeech, $video, $citationSpeech, $person, $imageTwo, $textOne, $imageThree, $textTwo)
+  protected function postOneCountry($country, $imageBackground, $htag, $victimsName, $citationOne,  $title, $citationTwo, $imageOne, $textIntro, $titleSpeech, $audio, $citationSpeech, $person, $imageTwo, $textOne, $imageThree, $textTwo, $video)
   {
-    $req = $this->getBdd()->prepare("INSERT INTO countries (country,imageBackground,htag,victimsName,citationOne,title,citationTwo,imageOne,textIntro,titleSpeech,video,citationSpeech,person,imageTwo,textOne,imageThree,textTwo) VALUES (:country,:imageBackground,:htag,:victimsName,:citationOne,:title,:citationTwo,:imageOne,:textIntro,:titleSpeech,:video,:citationSpeech,:person,:imageTwo,:textOne,:imageThree,:textTwo)");
+    $req = $this->getBdd()->prepare("INSERT INTO countries (country,imageBackground,htag,victimsName,citationOne,title,citationTwo,imageOne,textIntro,titleSpeech,audio,citationSpeech,person,imageTwo,textOne,imageThree,textTwo,video) VALUES (:country,:imageBackground,:htag,:victimsName,:citationOne,:title,:citationTwo,:imageOne,:textIntro,:titleSpeech,:audio,:citationSpeech,:person,:imageTwo,:textOne,:imageThree,:textTwo,:video)");
 
     $data_type = PDO::PARAM_STR;
     $req->bindValue(":country", $country,  $data_type);
@@ -37,13 +37,14 @@ abstract class Model
     $req->bindValue(":imageOne", $imageOne,  $data_type);
     $req->bindValue(":textIntro", $textIntro,  $data_type);
     $req->bindValue(":titleSpeech", $titleSpeech,  $data_type);
-    $req->bindValue(":video", $video,  $data_type);
+    $req->bindValue(":audio", $audio,  $data_type);
     $req->bindValue(":citationSpeech", $citationSpeech,  $data_type);
     $req->bindValue(":person", $person,  $data_type);
     $req->bindValue(":imageTwo", $imageTwo,  $data_type);
     $req->bindValue(":textOne", $textOne,  $data_type);
     $req->bindValue(":imageThree", $imageThree,  $data_type);
     $req->bindValue(":textTwo", $textTwo,  $data_type);
+    $req->bindValue(":video", $video,  $data_type);
     $req->execute();
 
     return true;
@@ -113,10 +114,10 @@ abstract class Model
     return $country;
   }
 
-  protected function updateOnecountries($table, $country, $imageBackground, $htag, $victimsName, $citationOne,  $title, $citationTwo, $imageOne, $textIntro, $titleSpeech, $video, $citationSpeech, $person, $imageTwo, $textOne, $imageThree, $textTwo, $id_country)
+  protected function updateOnecountries($table, $country, $imageBackground, $htag, $victimsName, $citationOne,  $title, $citationTwo, $imageOne, $textIntro, $titleSpeech, $audio, $citationSpeech, $person, $imageTwo, $textOne, $imageThree, $textTwo, $video, $id_country)
   {
 
-    $req = $this->getBdd()->prepare("UPDATE $table SET country='$country',imageBackground='$imageBackground',htag='$htag',victimsName='$victimsName', citationOne='$citationOne', title='$title', citationTwo='$citationTwo', imageOne='$imageOne',textIntro='$textIntro',titleSpeech='$titleSpeech',video='$video',citationSpeech='$citationSpeech',person='$person', imageTwo='$imageTwo',textOne='$textOne',imageThree='$imageThree',textTwo='$textTwo' WHERE id=$id_country");
+    $req = $this->getBdd()->prepare("UPDATE $table SET country='$country',imageBackground='$imageBackground',htag='$htag',victimsName='$victimsName', citationOne='$citationOne', title='$title', citationTwo='$citationTwo', imageOne='$imageOne',textIntro='$textIntro',titleSpeech='$titleSpeech',audio='$audio',citationSpeech='$citationSpeech',person='$person', imageTwo='$imageTwo',textOne='$textOne',imageThree='$imageThree',textTwo='$textTwo',video='$video' WHERE id=$id_country");
     $req->execute();
 
     return true;

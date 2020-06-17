@@ -124,6 +124,7 @@ class ControllerCountries
     $image_path_principal = $this->upload_asset("image", "imageBackground");
     $image_path_2 = $this->upload_asset("image", "imageTwo");
     $image_path_3 = $this->upload_asset("image", "imageThree");
+    $audio_path = $this->upload_asset("video", "audio");
     $video_path = $this->upload_asset("video", "video");
 
     $country = $_POST['country'];
@@ -136,14 +137,15 @@ class ControllerCountries
     $imageOne = $image_path_1;
     $textIntro = $_POST['textIntro'];
     $titleSpeech = $_POST['titleSpeech'];
-    $video = $video_path;
+    $audio = $audio_path;
     $citationSpeech = $_POST['citationSpeech'];
     $person = $_POST['person'];
     $imageTwo = $image_path_2;
     $textOne = $_POST['textOne'];
     $imageThree = $image_path_3;
     $textTwo = $_POST['textTwo'];
+    $video = $video_path;
     $this->_newcountrymanager =  new CountriesManager;
-    $this->_newcountrymanager->create_country($country, $imageBackground, $htag, $victimsName, $citationOne,  $title, $citationTwo, $imageOne, $textIntro, $titleSpeech, $video, $citationSpeech, $person, $imageTwo, $textOne, $imageThree, $textTwo);
+    $this->_newcountrymanager->create_country($country, $imageBackground, $htag, $victimsName, $citationOne,  $title, $citationTwo, $imageOne, $textIntro, $titleSpeech, $audio, $citationSpeech, $person, $imageTwo, $textOne, $imageThree, $textTwo, $video);
   }
 }

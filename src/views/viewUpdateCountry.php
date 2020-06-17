@@ -63,8 +63,8 @@
         <textarea class="form-control" id="citationSpeech" name="citationSpeech"><?= $country["citationSpeech"] ?></textarea>
       </div>
       <div class="form-group">
-        <label for="video">Bande audio d'un discours :</label>
-        <input type="file" accept=".mp3" aria-describedby="video" name="video" value="<?= $country["video"] ?>" />
+        <label for="audio">Bande audio d'un discours :</label>
+        <input type="file" accept=".mp3,.mp4" aria-describedby="audio" name="audio" value="<?= $country["audio"] ?>" />
         <small id="image" class="form-text text-muted">Formats acceptés : .mp3
         </small>
       </div>
@@ -99,6 +99,12 @@
       <div class="form-group">
         <label for="textTwo">Texte 2 :</label>
         <textarea class="form-control" id="textTwo" name="textTwo"><?= $country["textTwo"] ?></textarea>
+      </div>
+      <div class="form-group">
+        <label for="video">Video pays</label>
+        <input type="file" accept=".mp3,.mp4" aria-describedby="video" name="video" />
+        <small id="video" class="form-text text-muted">Formats acceptés : .mp3
+        </small>
       </div>
     </div>
     <button type="submit" class="btn btn-primary">Valider la modification des données
