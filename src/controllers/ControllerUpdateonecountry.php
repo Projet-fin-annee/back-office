@@ -88,14 +88,6 @@ class ControllerUpdateonecountry
       $uploadOk = 0;
     }
 
-    // Allow certain file formats
-    if (
-      $assetFileType != "jpg" && $assetFileType != "png" && $assetFileType != "jpeg"
-      && $assetFileType != "gif" && $assetFileType != "mp3"
-    ) {
-      $status = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-      $uploadOk = 0;
-    }
 
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {

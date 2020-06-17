@@ -90,22 +90,14 @@ class ControllerCountries
     }
 
     // Check file size
-    if ($_FILES[$assetName]["size"] > 65621990) {
+    if ($_FILES[$assetName]["size"] > 6505621990) {
       $status = "Sorry, your file is too large.";
-      $uploadOk = 0;
-    }
-
-    // Allow certain file formats
-    if (
-      $assetFileType != "jpg" && $assetFileType != "png" && $assetFileType != "jpeg"
-      && $assetFileType != "gif" && $assetFileType != "mp3"
-    ) {
-      $status = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
       $uploadOk = 0;
     }
 
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
+
       $status = "Sorry, your file was not uploaded.";
       // if everything is ok, try to upload file
     } else {
@@ -126,7 +118,6 @@ class ControllerCountries
     $image_path_3 = $this->upload_asset("image", "imageThree");
     $audio_path = $this->upload_asset("video", "audio");
     $video_path = $this->upload_asset("video", "video");
-
     $country = $_POST['country'];
     $imageBackground = $image_path_principal;
     $htag = $_POST['htag'];
