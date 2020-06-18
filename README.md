@@ -24,8 +24,8 @@ Grâce à fortrabbit j’ai pu mettre mon back-office en ligne, voici le lien : 
 7 - Aller sur http://localhost:8888/ et selectionner ``
 
 8 - Une page de login doit apparaître, les identifiants :
-user : `admin@admin.com`
-password : `Reçu par mail le jour de la présentation`
+user : `tania.abitbol@hetic.net`
+password : `webdoc2020xmp`
 
 9 - Envoyer les données que vous voulez utilisez en front depuis cette interface
 
