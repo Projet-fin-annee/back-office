@@ -83,10 +83,10 @@ class ControllerUpdateonecountry
     }
 
     // Check file size
-    if ($_FILES[$assetName]["size"] > 65621990) {
-      $status = "Sorry, your file is too large.";
-      $uploadOk = 0;
-    }
+    // if ($_FILES[$assetName]["size"] > 65621990) {
+    //   $status = "Sorry, your file is too large.";
+    //   $uploadOk = 0;
+    // }
 
 
     // Check if $uploadOk is set to 0 by an error

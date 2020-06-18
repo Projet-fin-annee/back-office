@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Jun 16, 2020 at 11:27 PM
+-- Generation Time: Jun 17, 2020 at 02:13 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.3.8
 
@@ -27,8 +27,9 @@ CREATE TABLE `countries`
   `id` int
 (100) NOT NULL,
   `country` varchar
-(15) NOT NULL,
-  `imageBackground` text,
+(20) NOT NULL,
+  `imageBackground` varchar
+(1000) DEFAULT NULL,
   `htag` varchar
 (100) DEFAULT NULL,
   `victimsName` text,
@@ -41,7 +42,7 @@ CREATE TABLE `countries`
 (1000) DEFAULT NULL,
   `textIntro` text,
   `titleSpeech` text,
-  `video` varchar
+  `audio` varchar
 (1000) DEFAULT NULL,
   `citationSpeech` text,
   `person` varchar
@@ -51,27 +52,10 @@ CREATE TABLE `countries`
   `textOne` text,
   `imageThree` varchar
 (1000) DEFAULT NULL,
-  `textTwo` text
+  `textTwo` text,
+  `video` varchar
+(1000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `countries`
---
-
-INSERT INTO `countries` (`
-id`,
-`country`,
-`imageBackground`,
-`htag`,
-`victimsName`,
-`citationOne`,
-`title`,
-`citationTwo`,
-`imageOne`,
-`textIntro
-`, `titleSpeech`, `video`, `citationSpeech`, `person`, `imageTwo`, `textOne`, `imageThree`, `textTwo`) VALUES
-(40, 'Brésildd', NULL, '', '', '', '', '', '5ee8ef44a8738', '', '', '5ee8ef44a8ad6', '', '', '5ee8ef44a8a7b', '', '5ee8ef44a8abc', ''),
-(41, 'a', NULL, NULL, 'a', 'a', 'a', 'a', '5ee8e58868c20capture-d’écran-2020-06-11-à-21.40.00.png', 'a', 'a', '5ee8e5886970c', 'a', 'a', '5ee8e5886966e', 'a', '5ee8e588696da', 'a');
 
 -- --------------------------------------------------------
 
@@ -171,7 +155,7 @@ ADD PRIMARY KEY
 --
 ALTER TABLE `countries`
   MODIFY `id` int
-(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `definition`
