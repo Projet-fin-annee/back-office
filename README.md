@@ -21,7 +21,7 @@ Grâce à fortrabbit j’ai pu mettre mon back-office en ligne, voici le lien : 
 
 6 - Aller dans l'onglet import et appuyer sur parcourir => Sélectionner la base de donnée ce trouvant dans `data/` du repository du back-office
 
-7 - Aller sur http://localhost:8888/ et selectionner ``
+7 - Aller sur http://localhost:8888/ et selectionner `src`
 
 8 - Une page de login doit apparaître, les identifiants :
 user : `tania.abitbol@hetic.net`
