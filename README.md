@@ -1,5 +1,12 @@
 # Back-office groupe 6
 
+## Déscription
+C’est le repository que j’ai crée pour le back-office codé en POO et avec le design pattern MVC.
+
+Depuis ce back office on peut se connecter, ajouter de nouveau pays/définitions. Et même modifier et suprimmer les données direct depuis le back-office !
+
+Grâce à fortrabbit j’ai pu mettre mon back-office en ligne, voici le lien : http://custom-x5lq.frb.io/
+
 ## Explication pour lancer le back-office (envoyer des données dans la base de donnée) :
 
 1 - Clôner/ Pull ce repository back-office
